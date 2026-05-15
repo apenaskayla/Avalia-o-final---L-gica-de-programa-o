@@ -1,0 +1,93 @@
+# 📈 Análise Comparativa de Ações Brasileiras
+
+**Aluna:** Kayla Rodrigues  
+**Turma:** ADA3 | **Matrícula:** 217169
+
+---
+
+## Descrição
+
+Este projeto realiza uma **análise financeira histórica** de 4 grandes empresas brasileiras listadas na B3, para o período de **janeiro de 2023 a maio de 2026**, utilizando Python e dados obtidos via `yfinance`.
+
+O notebook inclui um **código de referência** baseado na Petrobrás (PETR4) e a aplicação da mesma metodologia para as 4 empresas do exercício.
+
+---
+
+## Empresas Analisadas
+
+| Empresa         | Ticker        |
+|-----------------|---------------|
+| Vale S.A.       | `VALE3.SA`    |
+| Ambev S.A.      | `ABEV3.SA`    |
+| Itaú Unibanco   | `ITUB4.SA`    |
+| Banco do Brasil | `BBAS3.SA`    |
+
+---
+
+## Estrutura do Notebook
+
+Cada empresa passa pelas seguintes etapas:
+
+1. **Download dos dados** via `yfinance` (jan/2023 a mai/2026)
+2. **Visualização inicial** — 5 primeiras e 5 últimas linhas do DataFrame
+3. **Média anual** do preço de fechamento (por ano: 2023, 2024, 2025, 2026)
+4. **Desvio-padrão anual** do preço de fechamento
+5. **Retorno semestral** — variação percentual entre semestres consecutivos (ex: 2023-S1 → 2023-S2)
+6. **Gráfico de linha** do preço de fechamento com eixo X rotulado por semestre e marcadores nos fins de semestre
+7. **Tabela resumo semestral** com abertura, fechamento, média, desvio-padrão, mínimo, máximo e retorno
+
+---
+
+## Dependências
+
+```bash
+pip install yfinance pandas matplotlib seaborn
+```
+
+| Biblioteca     | Uso                                      |
+|----------------|------------------------------------------|
+| `yfinance`     | Download de dados históricos de ações    |
+| `pandas`       | Manipulação e análise de dados           |
+| `matplotlib`   | Geração de gráficos                      |
+| `seaborn`      | Estilização dos gráficos (`darkgrid`)    |
+
+---
+
+## Como Executar
+
+1. Clone ou baixe o arquivo `.ipynb`
+2. Abra no **Jupyter Notebook**, **JupyterLab** ou **Google Colab**
+3. Execute todas as células em ordem (`Run All`)
+
+> As células já incluem `!pip install` — não é necessária instalação prévia manual.
+
+---
+
+## Métricas Calculadas
+
+| Métrica              | Descrição                                                                 |
+|----------------------|---------------------------------------------------------------------------|
+| Média anual          | Média aritmética do preço de fechamento por ano                           |
+| Desvio-padrão anual  | Dispersão dos preços de fechamento em relação à média anual               |
+| Retorno semestral    | Variação percentual entre o fechamento do semestre anterior e o atual     |
+| Retorno total        | Variação percentual do preço inicial (jan/2023) ao final (mai/2026)       |
+| Volume médio diário  | Média de ações negociadas por dia no período                              |
+
+---
+
+## Período de Análise
+
+```
+Início:  01/01/2023
+Fim:     14/05/2026
+```
+
+Os semestres são definidos como:
+- **S1** — Janeiro a Junho
+- **S2** — Julho a Dezembro
+
+---
+
+## Referência
+
+O código base foi desenvolvido a partir da análise da **Petrobrás (PETR4.SA)**, que serve como template metodológico para todas as demais empresas.
